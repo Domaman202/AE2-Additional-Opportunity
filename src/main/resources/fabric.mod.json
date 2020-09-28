@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "ae2uc",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "AE2UC",
+  "description": "",
   "authors": [
-    "Me!"
+    "DmN202"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -14,16 +14,16 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/ae2uc/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "ru.DmN.AE2UnlimitedCable.Main"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "ae2uc.mixins.json"
   ],
 
   "depends": {
