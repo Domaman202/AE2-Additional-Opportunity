@@ -4,11 +4,10 @@
   "package": "ru.DmN.AE2UnlimitedCable.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinChannelFix"
+    "MixinGridNode"
   ],
   "client": [
-  ],
-  "server": [
+    "MixinSetup"
   ],
   "injectors": {
     "defaultRequire": 1
