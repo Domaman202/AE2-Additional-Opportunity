@@ -1,4 +1,4 @@
-package ru.DmN.AE2UnlimitedCable.mixin;
+package ru.DmN.AE2UC.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

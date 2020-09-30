@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ru.DmN.AE2UnlimitedCable.Main"
+      "ru.DmN.AE2UC.Main"
     ]
   },
   "mixins": [
