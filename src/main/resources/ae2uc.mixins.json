@@ -4,7 +4,8 @@
   "package": "ru.DmN.AE2UC.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinGridNode"
+    "MixinGridNode",
+    "ControllerMixin"
   ],
   "client": [
     "MixinSetup"
