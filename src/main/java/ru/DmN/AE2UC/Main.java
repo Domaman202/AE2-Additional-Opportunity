@@ -4,6 +4,7 @@ import appeng.tile.networking.ControllerBlockEntity;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import org.lwjgl.system.CallbackI;
 import ru.DmN.AE2UC.mixin.ControllerMixin;
 
 import java.lang.reflect.Method;
@@ -25,6 +26,10 @@ public class Main implements ModInitializer {
 
         DisableChannels = config.DisableChannels;
         EnableControllerNoSingleControllers = config.EnableControllerNoSingleControllers;
+
+        if (!DisableChannels && EnableControllerNoSingleControllers)
+            DisableChannels = true;
+
         // Reflection setup
         try {
             getProxy = ControllerBlockEntity.class.getMethod("getProxy");
