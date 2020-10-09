@@ -19,13 +19,13 @@ public class Main implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        // Config setup
         AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
-
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
         DisableChannels = config.DisableChannels;
         EnableControllerNoSingleControllers = config.EnableControllerNoSingleControllers;
-
+        // Reflection setup
         try {
             getProxy = ControllerBlockEntity.class.getMethod("getProxy");
         } catch (NoSuchMethodException e) {
