@@ -14,22 +14,17 @@ public class Main implements ModInitializer {
     // Config
     public static boolean DisableChannels;
     public static boolean EnableControllerNoSingleControllers;
-
     // Reflection
     public static Method getProxy = null;
 
     @Override
     public void onInitialize() {
-        // Config setup
+        // Config loading
         AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
         ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
-
+        // Config setup
         DisableChannels = config.DisableChannels;
         EnableControllerNoSingleControllers = config.EnableControllerNoSingleControllers;
-
-        if (!DisableChannels && EnableControllerNoSingleControllers)
-            DisableChannels = true;
-
         // Reflection setup
         try {
             getProxy = ControllerBlockEntity.class.getMethod("getProxy");
