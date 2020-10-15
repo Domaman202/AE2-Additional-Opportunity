@@ -1,3 +1,3 @@
 # AE2UC
 Created by DmNTeam!
-https://www.curseforge.com/minecraft/mc-mods/ae2unlimitedcable
+Mod - https://www.curseforge.com/minecraft/mc-mods/ae2unlimitedcable
