@@ -19,7 +19,7 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modApi "appeng:appliedenergistics2-fabric:8.1.0-alpha.10:api"
+	modCompileOnly "appeng:appliedenergistics2-fabric:8.1.0-alpha.10:api"
 	modCompileOnly "appeng:appliedenergistics2-fabric:8.1.0-alpha.10"
 
 	// Include only if you want AE2 at runtime
