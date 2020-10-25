@@ -12,6 +12,12 @@ public class Main implements ModInitializer {
     // Config
     public static boolean DisableChannels;
     public static boolean EnableControllerNoSingleControllers;
+    public static int controllerX1 = -7;
+    public static int controllerX2 = 7;
+    public static int controllerY1 = -7;
+    public static int controllerY2 = 7;
+    public static int controllerZ1 = -7;
+    public static int controllerZ2 = 7;
     // Reflection
     public static Method getProxy = null;
 
@@ -23,6 +29,12 @@ public class Main implements ModInitializer {
         // Config setup
         DisableChannels = config.DisableChannels;
         EnableControllerNoSingleControllers = config.EnableControllerNoSingleControllers;
+        controllerX1 = config.controllerX1;
+        controllerX2 = config.controllerX2;
+        controllerY1 = config.controllerY1;
+        controllerY2 = config.controllerY2;
+        controllerZ1 = config.controllerZ1;
+        controllerZ2 = config.controllerZ2;
         // Reflection setup
         try {
             getProxy = ControllerBlockEntity.class.getMethod("getProxy");
