@@ -1,10 +1,10 @@
-package ru.DmN.AE2UC.mixin;
+package ru.DmN.AE2AO.mixin;
 
 import appeng.me.GridNode;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import ru.DmN.AE2UC.Main;
+import ru.DmN.AE2AO.Main;
 
 @Mixin(GridNode.class)
 public abstract class MixinGridNode {

@@ -1,4 +1,4 @@
-package ru.DmN.AE2UC.mixin;
+package ru.DmN.AE2AO.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,4 +1,4 @@
-package ru.DmN.AE2UC;
+package ru.DmN.AE2AO;
 
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;

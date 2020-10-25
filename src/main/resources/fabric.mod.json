@@ -3,27 +3,27 @@
   "id": "ae2uc",
   "version": "${version}",
 
-  "name": "AE2UC",
+  "name": "AE2AO",
   "description": "",
   "authors": [
     "DmN202"
   ],
   "contact": {
-    "homepage": "https://github.com/Domaman202/AE2UnlimitedChannels",
-    "sources": "https://github.com/Domaman202/AE2UnlimitedChannels"
+    "homepage": "https://github.com/Domaman202/AE2-Additional-Opportunity",
+    "sources": "https://github.com/Domaman202/AE2-Additional-Opportunity"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/ae2uc/icon.png",
+  "icon": "assets/ae2ao/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "ru.DmN.AE2UC.Main"
+      "ru.DmN.AE2AO.Main"
     ]
   },
   "mixins": [
-    "ae2uc.mixins.json"
+    "ae2ao.mixins.json"
   ],
 
   "depends": {

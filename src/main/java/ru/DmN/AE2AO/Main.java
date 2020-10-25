@@ -1,11 +1,11 @@
-package ru.DmN.AE2UC;
+package ru.DmN.AE2AO;
 
 import appeng.tile.networking.ControllerBlockEntity;
+import com.github.mouse0w0.fastreflection.FastReflection;
+import com.github.mouse0w0.fastreflection.MethodAccessor;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-
-import java.lang.reflect.Method;
 
 public class Main implements ModInitializer {
 
@@ -19,7 +19,8 @@ public class Main implements ModInitializer {
     public static int controllerZ1 = -7;
     public static int controllerZ2 = 7;
     // Reflection
-    public static Method getProxy = null;
+//    public static Method getProxy = null;
+    public static MethodAccessor getProxy = null;
 
     @Override
     public void onInitialize() {
@@ -37,8 +38,8 @@ public class Main implements ModInitializer {
         controllerZ2 = config.controllerZ2;
         // Reflection setup
         try {
-            getProxy = ControllerBlockEntity.class.getMethod("getProxy");
-        } catch (NoSuchMethodException e) {
+            getProxy = FastReflection.create(ControllerBlockEntity.class.getMethod("getProxy"));
+        } catch (Throwable e) {
             System.out.println(e);
         }
     }

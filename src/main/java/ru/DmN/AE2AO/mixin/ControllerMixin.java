@@ -1,4 +1,4 @@
-package ru.DmN.AE2UC.mixin;
+package ru.DmN.AE2AO.mixin;
 
 import appeng.api.networking.pathing.ControllerState;
 import appeng.api.networking.pathing.IPathingGrid;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import ru.DmN.AE2UC.Main;
+import ru.DmN.AE2AO.Main;
 
 import javax.crypto.Mac;
 import java.lang.reflect.InvocationTargetException;
@@ -19,10 +19,9 @@ public abstract class ControllerMixin {
 
     @Redirect(method = "updateMeta", at = @At(value = "INVOKE", target = "Lappeng/api/networking/pathing/IPathingGrid;getControllerState()Lappeng/api/networking/pathing/ControllerState;"))
     @Unique
-    private ControllerState updateMeta(IPathingGrid iPathingGrid) throws GridAccessException, InvocationTargetException, IllegalAccessException {
+    private ControllerState updateMeta(IPathingGrid iPathingGrid) throws Throwable {
         if (!Main.EnableControllerNoSingleControllers) {
-            AENetworkProxy proxy = (AENetworkProxy) Main.getProxy.invoke(this, null);
-            return proxy.getPath().getControllerState();
+            return ((AENetworkProxy) Main.getProxy.invoke(this)).getPath().getControllerState();
         }
         else
             return ControllerState.CONTROLLER_ONLINE;

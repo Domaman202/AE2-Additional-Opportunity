@@ -1,4 +1,4 @@
-package ru.DmN.AE2UC.mixin;
+package ru.DmN.AE2AO.mixin;
 
 import appeng.api.networking.pathing.ControllerState;
 import appeng.me.cache.PathGridCache;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ru.DmN.AE2UC.Main;
+import ru.DmN.AE2AO.Main;
 
 @Mixin(PathGridCache.class)
 public class PathGridCacheMixin {
