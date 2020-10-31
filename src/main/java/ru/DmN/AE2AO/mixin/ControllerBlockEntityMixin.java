@@ -25,7 +25,6 @@ public abstract class ControllerBlockEntityMixin {
     @Redirect(method={"updateMeta"}, at=@At(value="INVOKE", target="Lappeng/api/networking/pathing/IPathingGrid;getControllerState()Lappeng/api/networking/pathing/ControllerState;"))
     private ControllerState updateMetaInject(IPathingGrid iPathingGrid) throws Throwable {
         if (!Main.moreControllersOnNetwork) {
-//            return ((AENetworkProxy)Main.getProxy.invoke(this, new Object[0])).getPath().getControllerState();
             return ((IGridProxyable) this).getProxy().getPath().getControllerState();
         }
 
