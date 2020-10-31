@@ -1,47 +1,42 @@
 package ru.DmN.AE2AO;
 
-import appeng.tile.networking.ControllerBlockEntity;
+import appeng.me.cache.PathGridCache;
 import com.github.mouse0w0.fastreflection.FastReflection;
-import com.github.mouse0w0.fastreflection.MethodAccessor;
+import com.github.mouse0w0.fastreflection.FieldAccessor;
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 
 public class Main implements ModInitializer {
-
-    // Config
     public static boolean DisableChannels;
-    public static boolean EnableControllerNoSingleControllers;
-    public static int controllerX1 = -7;
-    public static int controllerX2 = 7;
-    public static int controllerY1 = -7;
-    public static int controllerY2 = 7;
-    public static int controllerZ1 = -7;
-    public static int controllerZ2 = 7;
-    // Reflection
-//    public static Method getProxy = null;
-    public static MethodAccessor getProxy = null;
+    public static boolean moreControllersOnNetwork;
+    public static int controllerX;
+    public static int controllerY;
+    public static int controllerZ;
+    public static FieldAccessor controllers;
 
-    @Override
     public void onInitialize() {
-        // Config loading
         AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
-        ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
-        // Config setup
+        ModConfig config = (ModConfig)AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
         DisableChannels = config.DisableChannels;
-        EnableControllerNoSingleControllers = config.EnableControllerNoSingleControllers;
-        controllerX1 = config.controllerX1;
-        controllerX2 = config.controllerX2;
-        controllerY1 = config.controllerY1;
-        controllerY2 = config.controllerY2;
-        controllerZ1 = config.controllerZ1;
-        controllerZ2 = config.controllerZ2;
-        // Reflection setup
+        moreControllersOnNetwork = config.moreControllersOnNetwork;
+        controllerX = config.controllerX;
+        controllerY = config.controllerY;
+        controllerZ = config.controllerZ;
+
         try {
-            getProxy = FastReflection.create(ControllerBlockEntity.class.getMethod("getProxy"));
-        } catch (Throwable e) {
+            controllers = FastReflection.create(PathGridCache.class.getDeclaredField("controllers"));
+        }
+        catch (Throwable e) {
             System.out.println(e);
         }
     }
-}
 
+    static {
+        controllerX = 0;
+        controllerY = 0;
+        controllerZ = 0;
+        controllers = null;
+    }
+}

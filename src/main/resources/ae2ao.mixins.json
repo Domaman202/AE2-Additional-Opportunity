@@ -5,11 +5,9 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MixinGridNode",
-    "ControllerMixin",
-    "PathGridCacheMixin"
-  ],
-  "client": [
-    "MixinSetup"
+    "PathGridCacheMixin",
+    "ControllerValidatorMixin",
+    "ControllerBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
